@@ -25,7 +25,7 @@
       	4.1 输入邮箱，若邮箱有效将发送重置密码链接，重置密码链接含有唯一标识码，标识该用户的本次密码重置。
       	4.2 重置密码：为提升用户体验，需输入密码和确认密码，其满足条件同注册。
       	4.3 每次重置密码将唯一标识符存入数据库，![用作](https://img-blog.csdnimg.cn/20200502101058342.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzODA1MDUz,size_16,color_FFFFFF,t_70#pic_center)
-检验token的密钥，从将非法用户踢下线。
+检验token的密钥（修正，其实是将token的部分字段存入数据库，然后修改密码则改变此字段，使得原来token失效。），从将非法用户踢下线。
       	
 ## 四、用户资料管理：
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200502101731819.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzODA1MDUz,size_16,color_FFFFFF,t_70#pic_center)
