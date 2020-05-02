@@ -1,7 +1,7 @@
 # [提问箱](http://172.81.235.232:8080/mesBoard_Web_exploded/login.html)
 
 ## 一、项目概述：
-    提问者匿名，回答者公开。使用技术与框架，ssm,Bootstap,前后端分离开发。
+    提问者匿名，回答者公开。使用技术与框架，ssm,Bootstap,前后端分离开发。（测试普通用户账号(可重新注册)：caoxin,密码：123456abc,管理员账号：admin 密码：123456abc）
 
 ## 二、项目地址：  
     提问箱: :http://172.81.235.232:8080/mesBoard_Web_exploded/login.html
