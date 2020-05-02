@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        /*给button按钮添加click时间*/
+        $("#load_img").on("click",function(){
+            /*清空图片*/
+            $("#container").empty();
+            $.ajax({
+                url:"validCode",
+                type:"post",
+                dataType:"json",
+                success:function(data){
+                    /*用each遍历，item表示dada.data中的每一个*/
+                    $.each(data.data,function(i,item){
+                        var url=item.url;
+                        $("#container").append("<img src='"+url+"'/>");
+                    })
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="container"></div>
+<button id="load_img">Loading_Img</button>
+</body>
+</html>

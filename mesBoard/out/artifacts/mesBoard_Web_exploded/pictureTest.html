@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="bootstrap/favicon.ico"><script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="bootstrap/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/offcanvas.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="js/picture.js"></script>
+    <script src="js/md5.js"></script>
+</head>
+<body>
+ 		<div class="container">
+			<div class="row row-offcanvas row-offcanvas-right">
+				<nav class="navbar navbar-fixed-top navbar-inverse">
+					<div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+								<span class="sr-only">资料卡</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="#">留言板</a>
+						</div>
+						<div id="navbar" class="collapse navbar-collapse">
+							<ul class="nav navbar-nav">
+								<li ><a href="manage.html">提问箱管理</a></li>
+								<li><a href="pictureTest.html">个人资料</a></li>
+								<!--          <li><a href="#contact">Contact</a></li>-->
+							</ul>
+						</div><!-- /.nav-collapse -->
+					</div><!-- /.container -->
+				</nav><!-- /.navbar -->
+				<div class="col-xs-6 col-sm-6">
+			        <div class="jumbotron">
+						<div class="row">
+							<h3>修改用户名：</h3>
+							<div class="input-group">
+								<span class="input-group-addon" id="unamSpan">密码</span>
+								<input type="text" class="form-control" id="Name" placeholder="请输入需要修改的用户名" aria-describedby="sizing-addon2">
+							</div></br>
+						</div>
+						<div class="row">
+							<div id="UNameCheck">
+								<font color='red'>用户名不能为空</font>
+							</div>
+							<button type="button" id="changeName"  class="btn btn-success" onclick="chaName()" value="">修改用户名</button>
+						</div>
+			          <div class="row">
+							<h3>修改头像：</h3>
+			            	<img src="image/1.png" id="image" width="280" height="220" ><br /><br />
+			            	<form action="upfile" method="post" id="formf" name="formf" enctype="multipart/form-data">
+			            		<input type="file"  style="display:none" id="uploadfile" name="file" accept="image/*"/>
+			            		<input type="text"  style="display: none;" id="uName" name="uName"/>
+	                			<button type="button" id="upfile"  class="btn btn-success" onclick="givefile()" value="">提交图片</button>
+			            	</form>
+			          </div>
+			        </div>
+				</div>
+				<div class="col-xs-6 col-sm-6">
+					<div class="jumbotron">
+
+						<div class="row">
+						<h3>修改密码：</h3>
+						<div class="input-group">
+							<span class="input-group-addon" >密码</span>
+							<input type="password" id="pwdC" class="form-control" placeholder="原来密码" aria-describedby="sizing-addon2">
+						</div>
+						</div>
+						<div class="row">
+							<div class="input-group">
+							<span class="input-group-addon" >密码 </span>
+							<input type="password" id="pwdC1" class="form-control" placeholder="请输入修改的密码" aria-describedby="sizing-addon2">
+							<span class="input-group-addon" >确认密码 </span>
+							<input type="password" id="pwdC2" class="form-control" placeholder="请输入修改的确认密码" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+						<div class="row">
+							<div id="passwordCheck">
+<!--								<font color='red'>用户名不能为空</font>-->
+							</div>
+						</div>
+						<div class="row">
+							<button type="button" id="changePwd"  class="btn btn-success" onclick="chaPwd()" value="">修改密码</button>
+						</div>
+						<div class="row">
+							<h3>修改邮箱：</h3>
+							<div class="input-group">
+								<span class="input-group-addon" id="sizing-addon4">密码</span>
+								<input type="password" class="form-control" id="uPassword" placeholder="请输入密码来修改邮箱" aria-describedby="sizing-addon2">
+								<span class="input-group-addon" id="sizing-addon5">邮箱 </span>
+								<input type="email" class="form-control" id="uMail" placeholder="修改的邮箱" aria-describedby="sizing-addon2">
+							</div>
+						</div>
+						<div class="row">
+							<div id="EmailCheck">
+							</div>
+						</div>
+						<div class="row">
+							<button type="button" id="changeE"  class="btn btn-success" onclick="changeEmail()" value="">修改邮箱</button>
+						</div>
+
+						<div class="row">
+							<h3>提问箱设置：</h3>
+						</div>
+						<div class="row">
+                            <button type="button" id="open"  class="btn btn-success" onclick="openAsk()" value="">打开提问箱</button>
+                            <button type="button" id="close"  class="btn btn-warning" onclick="closeAsk()" value="">关闭提问箱</button>
+						</div>
+						</br></br></br></br></br></br>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+
+		<footer>
+			<p>&copy; 2020 仅用于学习交流，邮箱：caoxin9629@163.com</p>
+		</footer>
+</body>
+</html>
+ 
