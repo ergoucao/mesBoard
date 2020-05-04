@@ -88,6 +88,23 @@ CREATE TABLE `question` (
 
 insert  into `question`(`id`,`questioner`,`questioned`,`question`,`isDelete`,`answer`) values (1,'小明','caoxin','这是一个匿名信箱子吗？',0,'哈哈哈，这是第四次更改了啊'),(2,'小明','caoxin','这不是一个匿名信箱子吗？',1,'是的饿'),(3,'caoxin','caoxin','这是一个好玩的游戏啊',0,NULL),(4,'caoxin','caoxin','这是一个好玩的游戏啊',1,NULL),(5,'caoxin','caoxin','这是一个好玩的游戏啊',0,NULL),(6,'caoxin','caoxin','这是一个好玩的游戏啊',0,NULL),(7,'caoxin','笑话','你是笑话？',0,'fsfasfasfasd'),(8,'caoxin','笑话','你是笑话222',0,NULL),(9,'caoxin','笑话','这是给您的第三条提问',0,NULL);
 
+/*Table structure for table `riskmanagement` */
+
+DROP TABLE IF EXISTS `riskmanagement`;
+
+CREATE TABLE `riskmanagement` (
+  `rmId` int(10) NOT NULL AUTO_INCREMENT,
+  `uid` int(10) DEFAULT NULL,
+  `city` varchar(50) DEFAULT NULL,
+  `wrongLoginN` int(10) DEFAULT NULL,
+  `judgeCity` int(10) DEFAULT '0',
+  PRIMARY KEY (`rmId`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+/*Data for the table `riskmanagement` */
+
+insert  into `riskmanagement`(`rmId`,`uid`,`city`,`wrongLoginN`,`judgeCity`) values (1,1,'北京',1,0),(2,1,'北京',1,0),(3,NULL,NULL,0,0),(4,NULL,NULL,0,0),(5,21,'未知位置',0,0);
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
