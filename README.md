@@ -99,3 +99,9 @@
 		生成16位随机数字，按照特定规则加入密码后，求md5摘要。往摘要中再次按照特定规则加入这16位随机数字。验证时通过该规则取出16位随机数字，进行验证。
 		具体算法：
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200502235647955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzODA1MDUz,size_16,color_FFFFFF,t_70)
+
+
+# 其他（风控功能）
+## 1.通过记录用户的常用登录地点,异常地点登录时，向用户发送邮件.
+### 实现主要利用ip通过GeoLite2-City的数据库，获得实际城市地点，并继续记录比较。
+## 2.在用户密码被爆破时，频繁的登录失败时通过邮箱提醒用户.
